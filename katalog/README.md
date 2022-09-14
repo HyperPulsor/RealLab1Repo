@@ -5,13 +5,10 @@ Rakan Fasya Athhar Rayyan - 2106750950
 
 ***1. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html;***
 
-![Bagan PBP (1)](https://user-images.githubusercontent.com/101686378/190063578-44c35105-7489-4e35-bf2f-9c1891ed087e.png)
+![Bagan PBP (2)](https://user-images.githubusercontent.com/101686378/190164229-12161c46-a02c-4a03-b0ab-7493922adf97.png)
 
 
 Pertama, *user* akan meminta *request* kepada framework Django untuk mengambil *resource* yang dibutuhkan untuk *website*. Lalu, *framework* akan berperan sebagai pengatur untuk mengcek apakah *resource* tersebut ada di URL (**urls.py**). Setelah itu, URL akan memanggil View (**views.py**) yang akan berinteraksi dengan Model (**models.py**) dan Template (**html**) (**Hanya View yang dapat mengakses Model dan Template**). Kemudian, View akan berinteraksi dengan Model berupa suatu *query* dan *database* akan mengembalikan hasil yang berisi data-data (respon) ke Views kembali lewat Model. Selain itu, Views juga dapat memodifikasi data-data pada Model dengan *query*. Setelah *request* berhasil diproses, Views akan mengakses Template dan menggunakan hasil tadi untuk dipetakan pada Template yang nantinya akan berperan sebagai output untuk user setelah dirender. Kemudian, output berupa HTML yang sudah dirender tersebut akan dikembalikan ke Views dan akan diteruskan hingga ke *user* untuk diperlihatkan.
-
-<!-- Kaitannya :
-**urls.py** akan mengecek *resources* yand dibutuhkan dari *user request* pada **views.py**. **views.py** ini menjadi perantara utama antara **models.py** dan berkas file html. Hal ini dikarenakan **models.py** tidak dapat secara langsung mengakses berkas dan sebaliknya. **views.py** akan berinteraksi dengan **models.py** untuk mendapatkan data-data yang dibutuhkan berdasarkan *user request* atau mengedit data yang sudah ada pada **models.py**. Kemudian, **models.py** akan mengembalikan data-data yang dibutuhkan untuk *request*. Tetapi, Template hanya bisa mengakses *query* tersebut lewat View. Setelah output selesai dibuat, output akan dikembalikan ke views.py dan kemudian dikembalikan lewat urls.py serta framework Django hingga sampai ke *user* sebagai bentuk respon. -->
 
 ***2. Jelaskan kenapa menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?***
 

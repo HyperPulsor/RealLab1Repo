@@ -1,34 +1,62 @@
-# Tugas 2 Pengenalan Aplikasi Django dan Models View Template (MVT) pada Django
-Rakan Fasya Athhar Rayyan - 2106750950
+# Template Proyek Django PBP
 
-[Link *Web App*](https://katalog-lab-rakan.herokuapp.com/) (Tambahkan /katalog setelah url)
+Pemrograman Berbasis Platform (CSGE602022) - diselenggarakan oleh Fakultas Ilmu Komputer Universitas Indonesia, Semester Ganjil 2022/2023
 
-***1. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html;***
+*Read this in other languages: [Indonesian](README.md), [English](README.en.md)*
 
-![Bagan PBP (1)](https://user-images.githubusercontent.com/101686378/190063578-44c35105-7489-4e35-bf2f-9c1891ed087e.png)
+## Pendahuluan
 
+Repositori ini merupakan sebuah template yang dirancang untuk membantu mahasiswa yang sedang mengambil mata kuliah Pemrograman Berbasis Platform (CSGE602022) mengetahui struktur sebuah proyek aplikasi Django serta file dan konfigurasi yang penting dalam berjalannya aplikasi. Kamu dapat dengan bebas menyalin isi dari repositori ini atau memanfaatkan repositori ini sebagai pembelajaran sekaligus awalan dalam membuat sebuah proyek Django.
 
-Pertama, *user* akan meminta *request* kepada framework Django untuk mengambil *resource* yang dibutuhkan untuk *website*. Lalu, *framework* akan berperan sebagai pengatur untuk mengcek apakah *resource* tersebut ada di URL (**urls.py**). Setelah itu, URL akan memanggil View (**views.py**) yang akan berinteraksi dengan Model (**models.py**) dan Template (**html**) (**Hanya View yang dapat mengakses Model dan Template**). Kemudian, View akan berinteraksi dengan Model berupa suatu *query* dan *database* akan mengembalikan hasil yang berisi data-data (respon) ke Views kembali lewat Model. Selain itu, Views juga dapat memodifikasi data-data pada Model dengan *query*. Setelah *request* berhasil diproses, Views akan mengakses Template dan menggunakan hasil tadi untuk dipetakan pada Template yang nantinya akan berperan sebagai output untuk user setelah dirender. Kemudian, output berupa HTML yang sudah dirender tersebut akan dikembalikan ke Views dan akan diteruskan hingga ke *user* untuk diperlihatkan.
+## Cara Menggunakan
 
-<!-- Kaitannya :
-**urls.py** akan mengecek *resources* yand dibutuhkan dari *user request* pada **views.py**. **views.py** ini menjadi perantara utama antara **models.py** dan berkas file html. Hal ini dikarenakan **models.py** tidak dapat secara langsung mengakses berkas dan sebaliknya. **views.py** akan berinteraksi dengan **models.py** untuk mendapatkan data-data yang dibutuhkan berdasarkan *user request* atau mengedit data yang sudah ada pada **models.py**. Kemudian, **models.py** akan mengembalikan data-data yang dibutuhkan untuk *request*. Tetapi, Template hanya bisa mengakses *query* tersebut lewat View. Setelah output selesai dibuat, output akan dikembalikan ke views.py dan kemudian dikembalikan lewat urls.py serta framework Django hingga sampai ke *user* sebagai bentuk respon. -->
+Apabila kamu ingin menggunakan repositori ini sebagai repositori awalan yang nantinya akan kamu modifikasi:
 
-***2. Jelaskan kenapa menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?***
+1. Buka laman GitHub repositori templat kode, lalu klik tombol "**Use this template**"
+   untuk membuat salinan repositori ke dalam akun GitHub milikmu.
+2. Buka laman GitHub repositori yang dibuat dari templat, lalu gunakan perintah
+   `git clone` untuk menyalin repositorinya ke suatu lokasi di dalam sistem
+   berkas (_filesystem_) komputermu:
 
-Virtual environment digunakan supaya setiap proyek Django memiliki lingkungan dengan *dependencies* yang berbeda-beda. Hal ini akan mencegah terjadinya konflik pada Django, seperti versi Django yang berbeda pada komputer kita. Fungsi dari penggunaan venv adalah untuk mengisolasi *package* dan *dependencies* untuk suatu proyek tertentu. Jika tidak menggunakan *virtual environment*, maka *package* dan *dependencies* akan terinstall pada *global environment* di komputer kita. Hal ini menyebabkan mungkin terjadinya konflik versi karena berbeda. Selain itu, update *package* dan *dependencies* akan mengubah data pada penyimpanan lokal komputer kita sehingga dapat menyebabkan perbedaan data tersebut.
+   ```shell
+   git clone <URL ke repositori di GitHub> <path ke suatu lokasi di filesystem>
+   ```
+3. Masuk ke dalam repositori yang sudah di-_clone_ dan jalankan perintah berikut
+   untuk menyalakan _virtual environment_:
 
-Walaupun terdapat resiko - resiko tersebut, untuk membuat suatu aplikasi web berbasis Django dapat tidak menggunakan *virtual environment*. Akan tetapi, banyak resiko yang harus dihadapi.
+   ```shell
+   python -m venv env
+   ```
+4. Nyalakan environment dengan perintah berikut:
 
-***3. Jelaskan bagaimana cara kamu mengimplementasikan poin 1 sampai dengan 4 di atas.***
+   ```shell
+   # Windows
+   .\env\Scripts\activate
+   # Linux/Unix, e.g. Ubuntu, MacOS
+   source env/bin/activate
+   ```
+5. Install dependencies yang dibutuhkan untuk menjalankan aplikasi dengan perintah berikut:
 
-#### Poin 1 : views.py
-View mengambil data dari *database* lewat Model (models.py). Selain mengambil, view jugamemodifikasi *database* dengan menambahkan beberapa variabel, seperti Nama dan NPM. Kedua variabel tersebut disimpan pada context yang merupakan dictionary. Setelah function show_katalog dipanggil, maka context akan dirender dan ditampilkan pada halaman HTML *website*.
+   ```shell
+   pip install -r requirements.txt
+   ```
 
- #### Poin 2 : urls.py
- URL (urls.py) akan melakukan routing terhadap fungsi show_katalog. Routing mengambil path dari katalog yang sudah didaftarkan pada urls.py dalam project_django. Oleh karena rutenya yaitu "katalog/", maka untuk diakses di website perlu menambahkan "\katalog" setelah url dari websitenya supaya bisa mengakses HTML yang sudah dirender. Selain itu, juga menjalankan function show_katalog untuk ditampilkan di HTML. 
- 
- #### Poin 3 : katalog.html
- Pada katalog.html yang berada di folder templates dilakukan for loop terhadap list-list barang yang sudah di load dari initial_catalog_data.json. Data-data tersebut akan disimpan pada list_barang.
- 
-  #### Poin 4 : Deploy App
-  Menambahkan HEROKU_APP_NAME dan HEROKU_API_KEY pada Github Secrets. Hal ini supaya kita bisa menyambungkan Heroku dengan Repo Github kita. Setelah menambahkan kedua secrets tersebut, maka tinggal mengecek di Github Actions untuk deploy.
+6. Jalankan aplikasi Django menggunakan server pengembangan yang berjalan secara
+   lokal:
+
+   ```shell
+   python manage.py runserver
+   ```
+7. Bukalah `http://localhost:8000` pada browser favoritmu untuk melihat apakah aplikasi sudah berjalan dengan benar.
+
+## Contoh Deployment 
+
+Pada template ini, deployment dilakukan dengan memanfaatkan GitHub Actions sebagai _runner_ dan Heroku sebagai platform Hosting aplikasi. 
+
+Untuk melakukan deployment, kamu dapat melihat instruksi yang ada pada [Tutorial 0](https://pbp-fasilkom-ui.github.io/ganjil-2023/assignments/tutorial/tutorial-0).
+
+Untuk contoh aplikasi Django yang sudah di deploy, dapat kamu akses di [https://django-pbp-template.herokuapp.com/](https://django-pbp-template.herokuapp.com/)
+
+## Credits
+
+Template ini dibuat berdasarkan [PBP Ganjil 2021](https://gitlab.com/PBP-2021/pbp-lab) yang ditulis oleh Tim Pengajar Pemrograman Berbasis Platform 2021 ([@prakashdivyy](https://gitlab.com/prakashdivyy)) dan [django-template-heroku](https://github.com/laymonage/django-template-heroku) yang ditulis oleh [@laymonage, et al.](https://github.com/laymonage). Template ini dirancang sedemikian rupa sehingga mahasiswa dapat menjadikan template ini sebagai awalan serta acuan dalam mengerjakan tugas maupun dalam berkarya.
