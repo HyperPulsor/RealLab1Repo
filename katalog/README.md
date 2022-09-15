@@ -1,7 +1,8 @@
 # Tugas 2 Pengenalan Aplikasi Django dan Models View Template (MVT) pada Django
 Rakan Fasya Athhar Rayyan - 2106750950
 
-[Link *Web App*](https://katalog-lab-rakan.herokuapp.com/) (Tambahkan /katalog setelah url)
+[Link *Web App* Base](https://katalog-lab-rakan.herokuapp.com/)\
+[Link *Web App* Katalog](https://katalog-lab-rakan.herokuapp.com/katalog/)
 
 ***1. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html;***
 
