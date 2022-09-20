@@ -1,0 +1,113 @@
+[
+    {
+        "model": "mywatchlist.filmwatch",
+        "pk": 1,
+        "fields": {
+            "watched" : true,
+            "title" : "Scott Pilgrim vs The World",
+            "rating" : 3,
+            "release_date" : "2010-08-13",
+            "review" : "Sebagai film yang diangkat dari komik, Scott Pilgrim jelas perlu diterjemahkan ulang dalaFull of fresh, sharp touches and nonchalantly brash performances, Scott Pilgrim vs. the World consistently hits the sweet spot."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatch",
+        "pk": 2,
+        "fields": {
+            "watched" : true,
+            "title" : "Your Name",
+            "rating" : 5,
+            "release_date" : "2016-12-07",
+            "review" : "By the time Your Name reaches its final half-hour or so, the film has moved so far beyond its initial premise that if you think back to the beginning, you'll be astonished by how far it's come"
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatch",
+        "pk": 3,
+        "fields": {
+            "watched" : true,
+            "title" : "Baby Driver",
+            "rating" : 4,
+            "release_date" : "2017-08-24",
+            "review" : "It's all bolted together like clockwork, an assemblage of elements designed to arouse and engage an audience that needs a reason to stop looking at their phones."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatch",
+        "pk": 4,
+        "fields": {
+            "watched" : false,
+            "title" : "Interstellar",
+            "rating" : 5,
+            "release_date" : "2014-11-06",
+            "review" : "Rarely do epics of this scope and intelligence reach theaters anymore; such serious commercial filmmaking seems like a market almost exclusively maintained by Christopher Nolan"
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatch",
+        "pk": 5,
+        "fields": {
+            "watched" : true,
+            "title" : "Pengabdi Setan 2 : Communion",
+            "rating" : 4,
+            "release_date" : "2022-08-04",
+            "review" : "Its the best, and i think its better than the previous movie. This movie is so good that make the audience scary and the vibe is so good and so much joy and make people scream so loud."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatch",
+        "pk": 6,
+        "fields": {
+            "watched" : true,
+            "title" : "The Batman",
+            "rating" : 5,
+            "release_date" : "2022-03-02",
+            "review" : "What this film does achieve, however, is telling a solid new Batman story, one with some pretty compelling twists and a strong point-of-view on who, exactly, the Caped Crusader is. By default, that makes it one of the better Batman movies ever made."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatch",
+        "pk": 7,
+        "fields": {
+            "watched" : true,
+            "title" : "Whiplash",
+            "rating" : 5,
+            "release_date" : "2014-01-16",
+            "review" : "It's a thorny, thoughtful movie that asks provocative questions and isn't cocky enough to boast of knowing the answers."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatch",
+        "pk": 8,
+        "fields": {
+            "watched" : false,
+            "title" : "Top Gun : Maverick",
+            "rating" : 4,
+            "release_date" : "2022-05-27",
+            "review" : "It helps that the filmmaking is pretty much impeccable, with director Joseph Kosinski providing the kind of clear, streamlined action sequences that make blockbuster spectacle feel fun instead of mandatory."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatch",
+        "pk": 9,
+        "fields": {
+            "watched" : false,
+            "title" : "Blair Witch",
+            "rating" : 1,
+            "release_date" : "2016-09-16",
+            "review" : "Blair Witch is probably fascinating for young viewers who had never seen the original movie and didn't live through that hype, but for those familiar, it offers nothing new."
+        }
+    },
+    {
+        "model": "mywatchlist.filmwatch",
+        "pk": 10,
+        "fields": {
+            "watched" : true,
+            "title" : "Last Night in Soho",
+            "rating" : 2,
+            "release_date" : "2021-11-03",
+            "review" : "This audaciously original time-traveling thriller - with a plot too complicated and twisted to explain in a few sentences - wasn't exactly a crowd-pleasing hit. But please do yourselves a favor and stream it soon."
+        }
+    }
+    
+]
