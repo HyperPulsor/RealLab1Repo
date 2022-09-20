@@ -102,7 +102,7 @@
         "model": "mywatchlist.filmwatch",
         "pk": 10,
         "fields": {
-            "watched" : true,
+            "watched" : false,
             "title" : "Last Night in Soho",
             "rating" : 2,
             "release_date" : "2021-11-03",
