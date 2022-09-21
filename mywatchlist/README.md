@@ -7,7 +7,13 @@ Rakan Fasya Athhar Rayyan - 2106750950
 
 ***1. Jelaskan perbedaan antara JSON, XML, dan HTML!***
 
+Dari ketiga jenis file tersebut, terdapat dua yang merupakan *Markup Language*, yaitu HTML (*Hypertext Markup Language*)  dan XML (*JavaScript Object Notation*). *Markup Language* merupakan bahasa komputer yang biasanya menggunakan *tags* atau tanda. Akan tetapi, kedua bahasa tersebut memiliki karakteristik yang berbeda. HTML merupakan *markup language* yang menggunakan *element tree* untuk mewakilkan datanya dan dimodifikasi tampilannya sehingga menghasilkan tampilan yang kita mau. Sedangkan, XML merupakan *markup language* yang biasanya hanya digunakan untuk *data storage and delivery*. Hal ini dikarenakan XML adalah *content driven* dan HTML lebih ke *format driven*. Oleh karena itu, HTML lebih berfokus pada presentasi data. Sedangkan, XML lebih fokus pada transfer data.
+
+JSON atau *JavaScript Object Notation* merupakan tipe *file* yang menggunakan bahasa JavaScript untuk mewakilkan data-datanya. Pada JSON ini, data direpresentasikan seperti sebuah *dictionaries* (*key* dan *value*). Dengan penggunaan *key* dan *value* ini, memudahkan untuk dibaca oleh komputer sehingga data lebih cepat untuk dibaca dan ditulis dibandingkan dengan XML dan HTML. Tidak adanya *tags* atau tanda juga mempercepat proses *read* dan *write* data. Akan tetapi, karena JSON menggunakan metode penyimpanan data yang mirip dengan *dictionaries*, maka dibandingkan dengan XML dan HTML, JSON lebih susah untuk dibaca. Selain itu, JSON mirip seperti XML yang berfokus hanya pada transfer data saehingga *content driven*.
+
 ***2. Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?***
+
+*Data delivery* merupakan bagian penting dari suatu platform karena tanpa adanya implementasi ini, saat *browser* meminta data dari *database*, data tersebut bisa diambil dari *database* dan dirender menjadi sebuah output yang akan dirender pada *website*. *Data delivery* ini memungkinkan sumber datanya berupa file HTML, XML, atau JSON. Dengan mungkinnya ketiga tipe data ini, *developer* memiliki fleksibilitas terhadap input data yang akan digunakan pada *database* sehingga bisa menggunakan tipe data yang diinginkan. Digunakan tiga *format file* ini supaya memudahkan pengembang untuk melakukan modifikasi data dan *user* mudah untuk memahami data yang akan di*render*. Selain itu, saat pengembang mengubah data yang ada di *database* juga termasuk ke dalam *data delivery*.
 
 ***3. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas!***
 
@@ -23,16 +29,23 @@ Rakan Fasya Athhar Rayyan - 2106750950
 
 - Untuk *unit testing*, menambahkan tiga *function* pada `test.py` di `mywatchlist`. Tiga *function* tersebut kemudian dilakukan *testing* untuk setiap url (Html, XML, Json) dan dicek apakah setiap url bisa diakses dengan baik (status code dari url = HTTP_200_OK)
 
-- Pada implementasi Postman, masukkan setiap url (Html, XML, Json) pada kolom *request*. Lalu, Postman akan mengembalikan hasil berupa file HTML, XML, atau Json dari *website* besert *status code*nya. 
+- Pada implementasi Postman, masukkan setiap url (Html, XML, Json) pada kolom *request*. Lalu, Postman akan mengembalikan hasil berupa file HTML, XML, atau Json dari *website* beserta *status code*nya. 
 
 <h3 align="center"> Postman HTML </h3>
 
-![Screenshot_340](https://user-images.githubusercontent.com/101686378/191389836-d9ddf120-c25d-4062-a403-84081f60874b.png)
+![image](https://user-images.githubusercontent.com/101686378/191418832-97f3835b-d17e-488e-84eb-70bbdbd1093e.png)
 
-<h3 align="center"> Postman XML </h3> masih salah
+<h3 align="center"> Postman XML </h3>
 
-![Screenshot_341](https://user-images.githubusercontent.com/101686378/191389852-913e41c7-d816-44e9-9495-4c361df77fc9.png)
+![image](https://user-images.githubusercontent.com/101686378/191418951-9616915c-264e-48c3-bd4d-223287f62e24.png)
 
 <h3 align="center"> Postman JSON </h3>
 
-![Screenshot_342](https://user-images.githubusercontent.com/101686378/191389883-1500f7ee-bc89-4b78-923e-be46b4eaa590.png)
+![image](https://user-images.githubusercontent.com/101686378/191418694-366b7c4d-5cd0-4036-852c-811ca70063ee.png)
+
+Referensi :
+
+https://www.guru99.com/xml-vs-html-difference.html#:~:text=XML%20is%20abbreviation%20for%20extensible,while%20HTML%20is%20Case%20insensitive.
+
+https://medium.com/@oazzat19/what-is-the-difference-between-html-vs-xml-vs-json-254864972bbb
+
