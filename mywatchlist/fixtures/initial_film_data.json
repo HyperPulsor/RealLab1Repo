@@ -7,7 +7,7 @@
             "title" : "Scott Pilgrim vs The World",
             "rating" : 3,
             "release_date" : "2010-08-13",
-            "review" : "Sebagai film yang diangkat dari komik, Scott Pilgrim jelas perlu diterjemahkan ulang dalaFull of fresh, sharp touches and nonchalantly brash performances, Scott Pilgrim vs. the World consistently hits the sweet spot."
+            "review" : "Full of fresh, sharp touches and nonchalantly brash performances, Scott Pilgrim vs. the World consistently hits the sweet spot."
         }
     },
     {
@@ -108,6 +108,5 @@
             "release_date" : "2021-11-03",
             "review" : "This audaciously original time-traveling thriller - with a plot too complicated and twisted to explain in a few sentences - wasn't exactly a crowd-pleasing hit. But please do yourselves a favor and stream it soon."
         }
-    }
-    
+    } 
 ]

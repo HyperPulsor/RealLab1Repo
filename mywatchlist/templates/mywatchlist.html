@@ -2,7 +2,7 @@
 
  {% block content %}
 
-  <h1>Tugas 3 Assignment PBP/PBD</h1>
+  <h1 style="text-align: center;">Tugas 3 Assignment PBP/PBD</h1>
 
   <h5>Name: </h5>
   <p>Rakan Fasya Athhar Rayyan</p>
@@ -10,28 +10,28 @@
   <h5>Student ID: </h5>
   <p>2106750950</p>
 
-  <table>
+  <table border=1 style="text-align: center; padding: 15px 15px;">
     <tr>
-      <th>Watched</th>
-      <th>Title</th>
-      <th>Rating</th>
-      <th>Release Date</th>
-      <th>Review</th>
+      <th style="padding: 10px;">Watched</th>
+      <th style="padding: 10px;">Title</th>
+      <th style="padding: 10px;">Rating</th>
+      <th style="padding: 10px;">Release Date</th>
+      <th style="padding: 10px;">Review</th>
     </tr>
     {% comment %} Add the data below this line {% endcomment %}
     {% for film in list_film %}
         <tr>
-            <td>{{film.watched}}</td>
-            <td>{{film.title}}</td>
-            <td>{{film.rating}}</td>
-            <td>{{film.release_date}}</td>
-            <td>{{film.review}}</td>
+            <td style="text-align: center; padding: 15px">{{film.watched}}</td>
+            <td style="text-align: center; padding: 15px">{{film.title}}</td>
+            <td style="text-align: center; padding: 15px">{{film.rating}}</td>
+            <td style="text-align: center; padding: 15px">{{film.release_date}}</td>
+            <td style="text-align: justify; padding: 15px">{{film.review}}</td>
         </tr>
     {% endfor %}
   </table>
 
-  <h3>Watched Films : {{sum_watched}}</h3> 
-  <h3>Haven't Watched Films : {{sum_not_watched}}</h3>
-  <h2>{{bonus}}</h2>
+  <h3 style="text-align: center;">Watched Films : {{sum_watched}}</h3> 
+  <h3 style="text-align: center;">Haven't Watched Films : {{sum_not_watched}}</h3>
+  <h2 style="text-align: center">{{bonus}}</h2>
 
  {% endblock content %}
