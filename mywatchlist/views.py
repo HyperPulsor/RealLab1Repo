@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core import serializers
@@ -40,3 +41,10 @@ def show_films_xml(request):
 def show_films_json(request):
     data_film = FilmWatch.objects.all()
     return HttpResponse(serializers.serialize("json", data_film), content_type="application/json")
+
+def show_not_watched(request):
+    data_film = FilmWatch.objects.filter(title = "Your Name")
+    context = {
+        'list_film' : data_film,
+        }
+    return render(request, "mywatchlist.html", context)

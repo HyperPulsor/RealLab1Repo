@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <style>
+    h1{
+        color: black;
+        font-family: verdana;
+        font-size: 300%;
+    }
+
+    h2, h4, h5{
+        color: black;
+        font-family: verdana;
+    }
+
+    p {
+        color: red;
+        font-family: verdana;
+        font-size: 160%;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        font-family: verdana;
+    }
+
+    table {
+        margin-left: auto; 
+        margin-right: auto;
+    }
+
+    .button-center {
+        text-align: center;
+    }
+    </style>
+</head>
+
+<h1 style="text-align: center;">Tugas 3 PBP/PBD 2022</h1>
+
+<h2 style="text-align: center;">To-Do List</h2>
+
+<h4 style="text-align: center;">User Name: {{username}}</h4>
+
+
+<table border=5; style="text-align: center; padding: 15px 15px;">
+    <tr>
+    <th style="padding: 10px;">Date</th>
+    <th style="padding: 10px;">Task</th>
+    <th style="padding: 10px;">Description</th>
+    <th style="padding: 10px;">Status</th>
+    <th style="padding: 10px;">Toggle Status</th>
+    <th style="padding: 10px;">Delete Task</th>
+{% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+{% for task in todo_list %}
+    <tr>
+        <td style="text-align: center; padding: 15px">{{task.date}}</td>
+        <td style="text-align: center; padding: 15px">{{task.title}}</td>
+        <td style="text-align: center, justify; padding: 15px">{{task.description}}</td>
+        <td style="text-align: center; padding: 15px">
+            {% if task.is_finished %}
+            Selesai
+            {% else %}
+            Belum Selesai
+            {% endif %}
+        </td>
+        <td><button><a href="toggle/{{ task.id }}">Toggle</a></td></button>
+        <td><button><a href="delete/{{ task.id }}">Delete</a></td></button>
+    </tr>
+{% endfor %}
+</table>
+<p>&nbsp;</p>
+<div class="button-center">
+    <button style="text-align: center;"><a href="{% url 'todolist:add_todolist' %}">Tambah Task Baru</a></button>
+    <button style="text-align: center;"><a href="{% url 'todolist:logout' %}">Logout</a></button>
+</div>
+
+<h5 style="text-align: center;">Sesi terakhir login: {{ last_login }}</h5>
+
+{% endblock content %}
