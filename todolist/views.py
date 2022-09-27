@@ -13,10 +13,14 @@ from todolist.models import TodoList
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
     data = TodoList.objects.filter(user=request.user)
+    var = request.COOKIES.get('last_login', 'UserNotFound')
+    if var == "UserNotFound":
+        response = HttpResponseRedirect(reverse("todolist:login"))
+        return response
     context = {
         'username' : request.user.username,
         'todo_list' : data,
-        'last_login': request.COOKIES['last_login'],
+        'last_login': var,
     }
     return render(request, "todolist.html", context)
 
