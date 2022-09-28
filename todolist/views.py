@@ -39,12 +39,14 @@ def add_task(request):
             messages.error(request, "Harap isi nama dan deskripsi task")
     return render(request, "add.html")
 
+@login_required(login_url='/todolist/login/')
 def delete(request, id):
     data = TodoList.objects.get(id=id)
     data.delete()
     response = HttpResponseRedirect(reverse("todolist:show_todolist"))
     return response
 
+@login_required(login_url='/todolist/login/')
 def set_status(request, id):
     data = TodoList.objects.get(id=id)
     data.is_finished = not (data.is_finished)
