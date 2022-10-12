@@ -1,5 +1,5 @@
 import datetime
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse
 from django.shortcuts import render
 from django.shortcuts import redirect
@@ -8,6 +8,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from todolist.models import TodoList
+from django.http import HttpResponse
+from django.core import serializers
 
 # Create your views here.
 @login_required(login_url='/todolist/login/')
@@ -39,12 +41,31 @@ def add_task(request):
             messages.error(request, "Harap isi nama dan deskripsi task")
     return render(request, "add.html")
 
+
+@login_required(login_url='/todolist/login/')
+def add_task_ajax(request):
+    if request.method == "POST":
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        if title != "" and description != "":
+            date = datetime.datetime.now()
+            data_ajax = {}
+            new_task = TodoList.objects.create(title=title, description=description, user=request.user, date=date)
+            data_ajax['title'] = title
+            data_ajax['description'] = description
+            data_ajax['date'] = date
+            return JsonResponse(data_ajax)
+        else :
+            list(messages.get_messages(request))
+            messages.error(request, "Harap isi nama dan deskripsi task")
+    return render(request, "add.html")
+
 @login_required(login_url='/todolist/login/')
 def delete(request, id):
     data = TodoList.objects.get(id=id)
     data.delete()
     response = HttpResponseRedirect(reverse("todolist:show_todolist"))
-    return response
+    return JsonResponse({})
 
 @login_required(login_url='/todolist/login/')
 def set_status(request, id):
@@ -86,3 +107,8 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('todolist:login'))
     response.delete_cookie('last_login')
     return response
+
+@login_required(login_url='/todolist/login/')
+def show_json(request):
+    data = TodoList.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
