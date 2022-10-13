@@ -47,17 +47,20 @@ def add_task_ajax(request):
     if request.method == "POST":
         title = request.POST.get('title')
         description = request.POST.get('description')
+        data_ajax = {}
         if title != "" and description != "":
             date = datetime.datetime.now()
-            data_ajax = {}
             new_task = TodoList.objects.create(title=title, description=description, user=request.user, date=date)
+            data_ajax['condition'] = True
             data_ajax['title'] = title
             data_ajax['description'] = description
             data_ajax['date'] = date
             return JsonResponse(data_ajax)
         else :
+            data_ajax['condition'] = False
             list(messages.get_messages(request))
             messages.error(request, "Harap isi nama dan deskripsi task")
+            return JsonResponse(data_ajax)
     return render(request, "add.html")
 
 @login_required(login_url='/todolist/login/')

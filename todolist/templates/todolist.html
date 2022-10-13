@@ -101,6 +101,10 @@
       });
     }
 
+    function hideModal () {
+      $('#exampleModal').modal('hide');
+    }
+
     function addNewTask() {
       $.ajax({
         type: "POST",
@@ -110,9 +114,14 @@
           description: $("#task_description").val(),
           csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(),
         },
-        success: function () {
-          cardReset();
-          formReset();
+        success: function (data) {
+          if (data.condition == true) {
+            cardReset();
+            formReset();
+            hideModal();
+          } else {
+            alert("Input data harus valid");
+          }
         },
       });
     }
@@ -234,7 +243,6 @@
             name="submit"
             value="Submit"
             id="submit"
-            data-bs-dismiss="modal"
             onclick="addNewTask();"
           />
         </div>
